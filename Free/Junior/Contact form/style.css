@@ -1,0 +1,311 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap");
+
+/* challenge link -> https://www.frontendmentor.io/challenges/contact-form--G-hYlqKJj */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Karla", sans-serif;
+  transition: all 0.3s;
+}
+
+#main {
+  width: 100%;
+  min-height: 100vh;
+  background: hsl(148, 38%, 91%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 15px;
+}
+
+#main .success-box {
+  max-width: 400px;
+  padding: 13px;
+  background: hsl(187, 24%, 22%);
+  position: absolute;
+  top: 0px;
+  color: hsl(0, 0%, 100%);
+  border-radius: 8px;
+  margin-left: 25px;
+  margin-right: 25px;
+  box-shadow: 0 2px 2px hsl(148, 38%, 91%);
+  overflow: hidden;
+}
+
+#main .success-box .top {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+#main .success-box .top img {
+  height: 23px;
+}
+
+#main .success-box .top h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-left: 7px;
+}
+
+#main .success-box .top .bar {
+  width: 110%;
+  height: 8px;
+  background: hsl(186, 15%, 59%);
+  position: absolute;
+  top: -14px;
+  left: -20px;
+  animation: barAnim 5s linear 2s forwards;
+}
+
+@keyframes barAnim {
+  from {
+    width: 110%;
+  }
+
+  to {
+    width: 0%;
+  }
+}
+
+#main .success-box .bottom {
+  margin-top: 5px;
+}
+
+@keyframes successBoxAnim {
+  0% {
+    top: -110%;
+  }
+
+  80% {
+    top: 30px;
+  }
+
+  100% {
+    top: 20px;
+  }
+}
+
+#main .form {
+  width: 100%;
+  padding: 25px 25px;
+  background: hsl(0, 0%, 100%);
+  max-width: 500px;
+  border-radius: 15px;
+  transition: all 0.3s;
+}
+
+#main .form h2.title {
+  margin-bottom: 15px;
+  cursor: default;
+}
+
+#main .form form input:not([type=radio]):not([type=checkbox]) {
+  width: 100%;
+  height: 35px;
+  border-radius: 5px;
+  border: 1.9px solid hsl(186, 15%, 59%);
+  outline: none;
+  padding: 0 10px;
+  margin-top: 7px;
+  transition: border-color 0.2s, border-width 0.2s;
+  min-width: 150px;
+}
+
+#main .form form input:not([type=radio]):not([type=checkbox]):hover {
+  border-color: hsl(169, 82%, 27%);
+}
+
+#main .form form input:not([type=radio]):not([type=checkbox]):focus {
+  border-color: hsl(169, 82%, 27%);
+}
+
+#main .form form input:not([type=radio]):not([type=checkbox]):active {
+  border-color: hsl(169, 82%, 27%);
+}
+
+#main .form form .inputError:not([type=radio]):not([type=checkbox]) {
+  border: 1.9px solid hsl(0, 66%, 54%);
+}
+
+#main .form form .inputError:not([type=radio]):not([type=checkbox]):hover {
+  border-color: hsl(0, 66%, 54%);
+}
+
+#main .form form .inputError:not([type=radio]):not([type=checkbox]):focus {
+  border-color: hsl(0, 66%, 54%);
+}
+
+#main .form form .inputError:not([type=radio]):not([type=checkbox]):active {
+  border-color: hsl(0, 66%, 54%);
+}
+
+#main .form form textarea {
+  width: 100%;
+  height: 75px;
+  border-radius: 5px;
+  border: 1.9px solid hsl(186, 15%, 59%);
+  outline: none;
+  padding: 7px 10px;
+  margin-top: 7px;
+  transition: border-color 0.2s, border-width 0.2s;
+  resize: none;
+  position: relative;
+  padding-right: 10px;
+}
+
+#main .form form textarea:hover {
+  border-color: hsl(169, 82%, 27%);
+}
+
+#main .form form textarea:focus {
+  border-color: hsl(169, 82%, 27%);
+}
+
+#main .form form textarea:active {
+  border-color: hsl(169, 82%, 27%);
+}
+
+#main .form form .col {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  width: 100%;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+#main .form form .col:last-child {
+  margin-bottom: 0px;
+}
+
+#main .form form .col label {
+  color: hsl(187, 24%, 22%);
+  font-size: 16px;
+}
+
+#main .form form .col label::after {
+  content: " *";
+  color: hsl(169, 82%, 27%);
+  font-weight: 700;
+}
+
+#main .form form .col .rad-col {
+  width: 100%;
+}
+
+#main .form form .col .rad-col .radioError {
+  color: hsl(0, 66%, 54%);
+  font-size: 15px;
+  margin-top: 5px;
+  font-weight: 500;
+}
+
+#main .form form .col .rad-col .inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  width: 100%;
+  justify-content: space-between;
+}
+
+#main .form form .col .rad-col .inner .row {
+  flex: 1;
+  background: hsl(0, 0%, 100%);
+  border: 1.9px solid hsl(186, 15%, 59%);
+  border-radius: 5px;
+  height: 40px;
+  padding: 0px 13px;
+  display: flex;
+  align-items: center;
+  min-width: 150px;
+}
+
+#main .form form .col .rad-col .inner .row::after {
+  content: "";
+}
+
+#main .form form .col .rad-col .inner .row:has(input[type=radio]:checked) {
+  background-color: hsl(148, 38%, 91%);
+  border: 1.9px solid hsl(169, 82%, 27%);
+}
+
+#main .form form .col .rad-col .inner .row input[type=radio] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 1.9px solid hsl(186, 15%, 59%);
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+#main .form form .col .rad-col .inner .row input[type=radio]:checked {
+  border-color: hsl(169, 82%, 27%);
+}
+
+#main .form form .col .rad-col .inner .row input[type=radio]:checked::after {
+  content: "";
+  width: 8.5px;
+  height: 8.5px;
+  background: hsl(169, 82%, 27%);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+#main .form form .col .rad-col .inner .row input[type=radio]:hover {
+  border-color: hsl(169, 82%, 27%);
+}
+
+#main .form form .col .rad-col .inner .row span {
+  margin-left: 8px;
+}
+
+#main .form form .col .row {
+  flex: 1;
+}
+
+#main .form form .col .row textarea::-webkit-scrollbar {
+  position: absolute;
+  width: 7px;
+}
+
+#main .form form .col .row textarea::-webkit-scrollbar-thumb {
+  background: linear-gradient(hsl(169, 82%, 27%), hsl(0, 66%, 54%));
+  border-radius: 5px;
+}
+
+#main .form form .col .row .error {
+  color: hsl(0, 66%, 54%);
+  font-size: 15px;
+  margin-top: 5px;
+  font-weight: 500;
+}
+
+#main .form form .col .row button {
+  width: 100%;
+  height: 35px;
+  border: none;
+  outline: none;
+  background: hsl(169, 82%, 27%);
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 500;
+  color: hsl(0, 0%, 100%);
+  transition: all 0.3s;
+}
+
+#main .form form .col .row button:hover {
+  background: hsl(171, 83%, 14%);
+}
+
+/*# sourceMappingURL=style.css.map */

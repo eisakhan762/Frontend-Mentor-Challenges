@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Form </title>
+  <meta name="description" content="FrontendMentor Free Junior Challenge">
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <div id="main">
+    <div class="success-box" style="display: none;">
+      <div class="top">
+        <div class="bar"></div>
+        <img src="./assets/icons/check-mark-cricle.svg" alt="" style="fill: white;">
+        <h3>Message Sent!</h3>
+      </div>
+      <div class="bottom">
+        <p>Thanks for completing form we'll be in touch soon!</p>
+      </div>
+    </div>
+    <div class="form">
+      <h2 class="title">Contact Us</h2>
+      <form action="">
+        <div class="col">
+          <div class="row">
+            <label for="firstName">First Name</label><br>
+            <input type="text" name="firstName" id="firstName">
+            <p class="error" style="display: none;"></p>
+          </div>
+          <div class="row">
+            <label for="lastName">Last Name</label><br>
+            <input type="text" name="lastName" id="lastName">
+            <p class="error" style="display: none;"></p>
+          </div>
+        </div>
+        <div class="col">
+          <div class="row">
+            <label for="email">Email Address</label><br>
+            <input type="email" name="email" id="email">
+            <p class="error" style="display: none;"></p>
+
+
+          </div>
+        </div>
+        <div class="col">
+          <div class="rad-col">
+            <label for="" style="display: block !important;">Query Type</label><br>
+            <div class="inner">
+              <label for="ge" class="row">
+                <input type="radio" name="queryType" id="ge">
+                <span>General Enquiry</span>
+              </label>
+              <label for="sr" class="row">
+                <input type="radio" name="queryType" id="sr">
+                <span>Support Request</span>
+              </label>
+            </div>
+            <p class="radioError" style="display: none;">aa</p>
+          </div>
+        </div>
+        <div class=" col">
+          <div class="row">
+            <label for="email">Message</label><br>
+            <textarea name="message" id="message"></textarea>
+            <p class="error" style="display: none;"></p>
+          </div>
+        </div>
+        <div class="col">
+          <div class="row">
+            <input type="checkbox" name="tnc" id="tnc">
+            <label for="tnc">I consent to being contacted by the team</label>
+            <p class="error" style="display: none;"></p>
+          </div>
+        </div>
+        <div class="col">
+          <div class="row">
+            <button type="submit" id="submitBtn">Submit</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+<script src="./index.js"></script>
+
+</html>

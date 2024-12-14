@@ -1,0 +1,333 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap');
+
+$green-200: hsl(148, 38%, 91%);
+$green-600: hsl(169, 82%, 27%);
+$red: hsl(0, 66%, 54%);
+$white: hsl(0, 0%, 100%);
+$grey-500: hsl(186, 15%, 59%);
+$grey-900: hsl(187, 24%, 22%);
+$font-size: 16px;
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Karla', sans-serif;
+  transition: all 0.3s;
+
+}
+
+#main {
+  width: 100%;
+  min-height: 100vh;
+  background: $green-200;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 15px;
+
+  .success-box {
+    max-width: 400px;
+    padding: 13px;
+    background: $grey-900;
+    position: absolute;
+    top: 0px;
+    color: $white;
+    border-radius: 8px;
+    margin-left: 25px;
+    margin-right: 25px;
+    // animation: successBoxAnim 2s forwards;
+    // animation: successBoxAnim 2s forwards reverse;
+    box-shadow: 0 2px 2px $green-200;
+    overflow: hidden;
+
+    .top {
+      display: flex;
+      align-items: center;
+      position: relative;
+
+      img {
+        height: 23px;
+      }
+
+      h3 {
+        font-size: 18px;
+        font-weight: 700;
+        margin-left: 7px;
+      }
+
+      .bar {
+        width: 110%;
+        height: 8px;
+        background: $grey-500;
+        position: absolute;
+        top: -14px;
+        left: -20px;
+        animation: barAnim 5s linear 2s forwards;
+      }
+
+      @keyframes barAnim {
+        from {
+          width: 110%;
+        }
+
+        to {
+          width: 0%;
+        }
+      }
+    }
+
+    .bottom {
+      margin-top: 5px;
+
+    }
+  }
+
+  @keyframes successBoxAnim {
+    0% {
+      top: -110%;
+    }
+
+    80% {
+      top: 30px;
+    }
+
+    100% {
+      top: 20px;
+    }
+
+  }
+
+
+  .form {
+    width: 100%;
+    padding: 25px 25px;
+    background: $white;
+    max-width: 500px;
+    border-radius: 15px;
+    transition: all 0.3s;
+
+    h2.title {
+      margin-bottom: 15px;
+      cursor: default;
+    }
+
+    form {
+      input:not([type="radio"]):not([type="checkbox"]) {
+        width: 100%;
+        height: 35px;
+        border-radius: 5px;
+        border: 1.9px solid $grey-500;
+        outline: none;
+        padding: 0 10px;
+        margin-top: 7px;
+        transition: border-color 0.2s, border-width 0.2s;
+        min-width: 150px;
+
+        &:hover {
+          border-color: $green-600;
+        }
+
+        &:focus {
+          border-color: $green-600;
+        }
+
+        &:active {
+          border-color: $green-600;
+        }
+      }
+
+      .inputError:not([type="radio"]):not([type="checkbox"]) {
+        border: 1.9px solid $red;
+
+        &:hover {
+          border-color: $red;
+        }
+
+        &:focus {
+          border-color: $red;
+        }
+
+        &:active {
+          border-color: $red;
+        }
+      }
+
+      textarea {
+        width: 100%;
+        height: 75px;
+        border-radius: 5px;
+        border: 1.9px solid $grey-500;
+        outline: none;
+        padding: 7px 10px;
+        margin-top: 7px;
+        transition: border-color 0.2s, border-width 0.2s;
+        resize: none;
+        position: relative;
+        padding-right: 10px;
+
+
+
+        &:hover {
+          border-color: $green-600;
+        }
+
+        &:focus {
+          border-color: $green-600;
+        }
+
+        &:active {
+          border-color: $green-600;
+        }
+      }
+
+
+      .col {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        width: 100%;
+        justify-content: space-between;
+        margin-bottom: 15px;
+
+        &:last-child {
+          margin-bottom: 0px;
+
+        }
+
+        label {
+          color: $grey-900;
+          font-size: 16px;
+
+          &::after {
+            content: " *";
+            color: $green-600;
+            font-weight: 700;
+          }
+
+        }
+
+
+        .rad-col {
+          width: 100%;
+
+          .radioError {
+            color: $red;
+            font-size: 15px;
+            margin-top: 5px;
+            font-weight: 500;
+          }
+
+          .inner {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            width: 100%;
+            justify-content: space-between;
+
+            .row {
+              flex: 1;
+              background: $white;
+              border: 1.9px solid $grey-500;
+              border-radius: 5px;
+              height: 40px;
+              padding: 0px 13px;
+              display: flex;
+              align-items: center;
+              min-width: 150px;
+
+              &::after {
+                content: '';
+              }
+
+              &:has(input[type="radio"]:checked) {
+                background-color: $green-200;
+                border: 1.9px solid $green-600;
+              }
+
+              input[type="radio"] {
+                appearance: none;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                width: 16px;
+                height: 16px;
+                border: 1.9px solid hsl(186, 15%, 59%);
+                border-radius: 50%;
+                outline: none;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                position: relative;
+
+                &:checked {
+                  border-color: hsl(169, 82%, 27%);
+
+                  &::after {
+                    content: "";
+                    width: 8.5px;
+                    height: 8.5px;
+                    background: $green-600;
+                    border-radius: 50%;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+                  }
+                }
+
+                &:hover {
+                  border-color: hsl(169, 82%, 27%);
+                }
+              }
+
+              span {
+                margin-left: 8px;
+              }
+
+            }
+          }
+        }
+
+        .row {
+          flex: 1;
+
+          textarea::-webkit-scrollbar {
+            position: absolute;
+            width: 7px;
+          }
+
+          textarea::-webkit-scrollbar-thumb {
+            background: linear-gradient($green-600, $red);
+            border-radius: 5px;
+          }
+
+
+          .error {
+            color: $red;
+            font-size: 15px;
+            margin-top: 5px;
+            font-weight: 500;
+          }
+
+          button {
+            width: 100%;
+            height: 35px;
+            border: none;
+            outline: none;
+            background: $green-600;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 500;
+            color: $white;
+            transition: all 0.3s;
+
+            &:hover {
+              background: hsl(171, 83%, 14%);
+            }
+          }
+        }
+      }
+    }
+  }
+}
