@@ -1,0 +1,89 @@
+$green: hsl(75, 94%, 57%);
+$white: hsl(0, 0%, 100%);
+$grey700: hsl(0, 0%, 20%);
+$grey800: hsl(0, 0%, 12%);
+$grey900: hsl(0, 0%, 8%);
+$fontSizeP: 14px;
+$fontFamily: 'Inter', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: $fontFamily;
+}
+
+#main {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: $grey900;
+  padding: 0 20px;
+
+  #social-media-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 350px;
+    padding: 30px 25px;
+    border-radius: 10px;
+    background: $grey800;
+
+    .user-icon {
+      img {
+        height: 70px;
+        border-radius: 50%;
+      }
+    }
+
+    h2.users-name {
+      font-size: 23px;
+      margin-top: 10px;
+      color: $white;
+    }
+
+    p.users-location {
+      font-size: $fontSizeP;
+      margin-top: 5px;
+      font-weight: 500;
+      color: $green;
+    }
+
+    p.users-tech-stack {
+      font-size: $fontSizeP;
+      margin-top: 20px;
+      margin-bottom: 10px;
+      color: $white;
+
+      &::before {
+        content: '"';
+      }
+
+      &::after {
+        content: '"';
+      }
+    }
+
+    a {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      padding: 10px 0;
+      margin-top: 15px;
+      border-radius: 7px;
+      background: $grey700;
+      color: $white;
+      transition: all 0.6s;
+
+      &:hover {
+        background: $green;
+        color: $grey900;
+      }
+    }
+  }
+}
